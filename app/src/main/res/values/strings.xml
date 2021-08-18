@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MimoApp</string>
+    <string name="start_lesson">Start lesson</string>
+    <string name="next">Next</string>
+    <string name="your_answer">Your answer</string>
+    <string name="submit">Submit</string>
+    <string name="restart">Restrat</string>
+    <string name="success_message">All lessons completed. Press Restart to do it again</string>
+</resources>
