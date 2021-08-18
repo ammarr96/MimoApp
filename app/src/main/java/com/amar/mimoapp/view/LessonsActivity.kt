@@ -20,12 +20,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.amar.mimoapp.R
 import com.amar.mimoapp.db.DataState
 import com.amar.mimoapp.model.Lesson
-import com.amar.mimoapp.util.Constants.LESSON_EXTRA
-import com.amar.mimoapp.viewmodel.HomeViewModel
 import com.amar.mimoapp.viewmodel.LessonViewModel
 import kotlinx.android.synthetic.main.activity_lessons.*
-import kotlinx.android.synthetic.main.dialog_enter_answer_layout.*
-
 
 class LessonsActivity : AppCompatActivity() {
 
@@ -64,11 +60,10 @@ class LessonsActivity : AppCompatActivity() {
                     }
                 }
                 is DataState.Error -> {
-//                    displayProgressBar(false)
-//                    displayError(dataState.exception.message)
+
                 }
                 is DataState.Loading -> {
-                    //displayProgressBar(true)
+
                 }
             }
         })
@@ -78,16 +73,14 @@ class LessonsActivity : AppCompatActivity() {
             when (dataState) {
                 is DataState.Success<Int> -> {
 
-                    //Toast.makeText(applicationContext, "Lesson completed", Toast.LENGTH_SHORT).show()
                     lessonViewModel.getUnFinishedLessons()
 
                 }
                 is DataState.Error -> {
-//                    displayProgressBar(false)
-//                    displayError(dataState.exception.message)
+
                 }
                 is DataState.Loading -> {
-                    //displayProgressBar(true)
+
                 }
             }
         })
@@ -142,16 +135,18 @@ class LessonsActivity : AppCompatActivity() {
         val buttonSubmit = dialog.findViewById(R.id.buttonSubmit) as Button
         val answerET = dialog.findViewById(R.id.answerET) as EditText
 
+        answerET.requestFocus()
+
         buttonSubmit.setOnClickListener {
 
             if (answerET.text.toString().trim().equals(correctAnswer)) {
                 dialog.dismiss()
-                Toast.makeText(applicationContext, "Correct", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, R.string.correct_answer, Toast.LENGTH_SHORT).show()
                 questionTV.setText(fullAnswer)
                 buttonNext.isEnabled = true
             }
             else {
-                Toast.makeText(applicationContext, "Incorrect", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, R.string.incorrect_answer, Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -162,7 +157,6 @@ class LessonsActivity : AppCompatActivity() {
     companion object {
         fun start(context: Context) {
             val intent = Intent(context, LessonsActivity::class.java)
-            //intent.putParcelableArrayListExtra(LESSON_EXTRA, lessons)
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent)
         }

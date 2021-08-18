@@ -5,5 +5,7 @@
     <string name="your_answer">Your answer</string>
     <string name="submit">Submit</string>
     <string name="restart">Restrat</string>
-    <string name="success_message">All lessons completed. Press Restart to do it again</string>
+    <string name="success_message">All lessons completed.\nPress Restart to do it again</string>
+    <string name="correct_answer">Correct answer</string>
+    <string name="incorrect_answer">Incorrect answer</string>
 </resources>

@@ -14,10 +14,7 @@ import com.amar.mimoapp.viewmodel.HomeViewModel
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
-//@AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
-
-    //private val homeViewModel: HomeViewModel by viewModels()
 
     private var lessonList : ArrayList<Lesson> = arrayListOf()
 

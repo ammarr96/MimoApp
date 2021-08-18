@@ -9,19 +9,12 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
-//@Inject
-//constructor(
-//    private val mainRepository: LessonRepository
-//): ViewModel() {
-
 
     val mainRepository: LessonRepository
-    //val employeeLiveData: LiveData<List<Lesson>>
 
     init {
 
         mainRepository = LessonRepository()
-        //this.employeeLiveData = mainRepository.getEmployees()
 
     }
 

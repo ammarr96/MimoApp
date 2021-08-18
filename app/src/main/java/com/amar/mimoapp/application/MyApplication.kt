@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.room.Room
 import com.amar.mimoapp.db.LessonDatabase
 
-//@HiltAndroidApp
 class MyApplication : Application() {
 
     companion object {
